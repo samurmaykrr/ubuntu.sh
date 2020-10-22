@@ -4,5 +4,5 @@
 
 # RUN 
 ```
-instalation code here
+bash <(curl -fsSL https://git.io/JTgsU)
 ```
