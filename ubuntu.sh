@@ -85,7 +85,7 @@ echo -e "Making Oh My Zsh hawt..."
     [[ -z $(grep "autoload -U compinit && compinit" $HOME/.zshrc) ]] && echo "autoload -U compinit && compinit" >> $HOME/.zshrc
 	
     sed -i '/^ZSH_THEME=/c\ZSH_THEME="random"' $HOME/.zshrc
-	sed -i '/^plugins=*=/c\plugins=(git z zsh-syntax-highlighting zsh-autosuggestions zsh-completions)' $HOME/.zshrc
+	sed -i '/^plugins=*=/c\plugins=(git systemd command-not-found heroku pip tmux tmuxinator jump z zsh-syntax-highlighting zsh-autosuggestions zsh-completions)' $HOME/.zshrc
 	
 	echo "##############" >> ~/.zshrc # i am too lazy to make a different file and just manage that for aliases 
 	echo "#  A L I A S #" >> ~/.zshrc
