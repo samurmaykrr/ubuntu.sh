@@ -105,6 +105,7 @@ echo -e "Making Oh My Zsh hawt..."
 	echo alias lsd='"ls"' >> ~/.zshrc
 	echo alias mount='"rclone mount"' >> ~/.zshrc
 	echo alias rm='"sudo rm -rf"' >> ~/.zshrc
+	echo alias mkd='"mkdir"' >> ~/.zshrcs
 	echo alias ytdl='"youtube-dl"' >> ~/.zshrc
 	echo alias gdl='"gallery-dl"' >> ~/.zshrc
 	echo alias git-push-all='"git add * -f && git commit -m "pushed""' >> ~/.zshrc
