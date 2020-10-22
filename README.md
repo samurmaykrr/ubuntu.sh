@@ -6,3 +6,4 @@
 ```
 bash <(curl -fsSL https://git.io/JTgsU)
 ```
++ no manual input is required just reboot at end.
