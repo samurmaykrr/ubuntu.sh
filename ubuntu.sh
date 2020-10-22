@@ -24,7 +24,7 @@ echo ################################################
 echo "Now we are gonna install all esential packages"
 sudo add-apt-repository -y ppa:apt-fast/stable 
 sudo apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y apt-fast && echo debconf apt-fast/maxdownloads string 16 | debconf-set-selections && echo debconf apt-fast/dlflag boolean true | debconf-set-selections && echo debconf apt-fast/aptmanager string apt-get | debconf-set-selections
-sudo apt-get -y install ncdu tree rar unrar zip unzip htop atop p7zip-full neovim  
+sudo apt-get -y install ncdu tree rar unrar zip unzip htop atop p7zip-full neovim vnstati
 clear
 sleep 1
 echo "Now installing python stuff"
@@ -56,7 +56,7 @@ clear
 echo "changing MOTD" # remove this section before running code in case you don't need it
 sudo apt-get -y install update-motd
 sudo rm -rf /etc/update-motd.d/*
-sudo apt-get -y install inxi screenfetch vnstati
+sudo apt-get -y install inxi screenfetch
 sudo touch /etc/update-motd.d/01-custom 
 sudo chmod +x /etc/update-motd.d/01-custom
 
@@ -99,6 +99,7 @@ echo -e "Making Oh My Zsh hawt..."
 	echo alias update='"sudo apt-get update"' >> ~/.zshrc
 	echo alias upgrade='"sudo apt-get -y upgrade"' >> ~/.zshrc
 	echo alias install='"sudo apt-get -y install"' >> ~/.zshrc
+	echo alias autoremove='"sudo apt-get -y autoremove"' >> ~/.zshrc
 	echo alias reboot='"sudo reboot"' >> ~/.zshrc
 	echo alias cls='"clear"' >> ~/.zshrc
 	echo alias lsd='"ls"' >> ~/.zshrc
