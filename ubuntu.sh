@@ -110,4 +110,7 @@ echo -e "Making Oh My Zsh hawt..."
 	echo alias aria2='"aria2c"' >> ~/.zshrc
 	echo alias refresh='"source ~/.zshrc"' >> ~/.zshrc
 sudo chsh -s /bin/zsh ubuntu # change ubuntu with your user name if the shell doesn't change and run this command again
+sleep 1
+clear
 echo "ALL DONE!~~"
+echo "I would recommend rebooting now!"
