@@ -2,10 +2,6 @@
 USER=$(whoami)
 export DEBIAN_FRONTEND=noninteractive
 
-if [ "$(id -u)" != "0" ]; then
-  echo "I recommend you to run this as root."
-fi
-
 echo "This script is shit and bloated"
 sleep 5
 clear
