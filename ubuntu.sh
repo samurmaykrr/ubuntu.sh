@@ -3,8 +3,7 @@ USER=$(whoami)
 export DEBIAN_FRONTEND=noninteractive
 
 if [ "$(id -u)" != "0" ]; then
-  echo "Must be run as root, directly or with sudo"
-  exit 1
+  echo "I recommend you to run this as root."
 fi
 
 echo "This script is shit and bloated"
