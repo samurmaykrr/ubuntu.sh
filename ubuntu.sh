@@ -84,7 +84,7 @@ clear && sleep 1
  
 echo "Installing aria2,rclone & transmission"
 sudo apt-get -y install aria2 
-sudo apt-get -y install transmission-cli transmission-daemon 
+sudo apt-get -y install transmission-cli transmission-daemon && sudo /etc/init.d/transmission-daemon stop && mkdir ~/downloads && sudo chown ubuntu:debian-transmission ~/downloads && sudo chmod g+w ~/downloads && clear && sed -i 's|"/var/lib/transmission-daemon/downloads"|"~/downloads"|g' /etc/transmission-daemon/settings.json && sed -i 's|"rpc-whitelist-enabled": true|"rpc-whitelist-enabled": false|g' /etc/transmission-daemon/settings.json && sed -i 's|"rpc-authentication-required": true|"rpc-authentication-required": false|g' /etc/transmission-daemon/settings.json 
 
 clear && sleep 1
 
@@ -118,11 +118,13 @@ echo -e "Making Oh My Zsh hawt..."
     git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
     git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-completions $HOME/.oh-my-zsh/custom/plugins/zsh-completions
+	wget https://raw.githubusercontent.com/rupa/z/master/z.sh -O ~/.z
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/custom/themes/powerlevel10k
     [[ -z $(grep "autoload -U compinit && compinit" $HOME/.zshrc) ]] && echo "autoload -U compinit && compinit" >> $HOME/.zshrc
 	
     sed -i '/^ZSH_THEME=/c\ZSH_THEME="random"' $HOME/.zshrc
 	sed -i '/^plugins=*=/c\plugins=(git systemd command-not-found heroku pip tmux tmuxinator jump z zsh-syntax-highlighting zsh-autosuggestions zsh-completions)' $HOME/.zshrc
+	
 	sudo tee -a $HOME/.zshrc >> /dev/null <<'ALIAS'
 ##############
 #  A L I A S #
