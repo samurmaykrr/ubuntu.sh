@@ -58,7 +58,7 @@ echo $Done
 
 echo "${RED}Installing Apt-fast${NORMAL}"
 sudo add-apt-repository -y ppa:apt-fast/stable > /dev/null
-sudo apt-get -qq update > /dev/null && sudo DEBIAN_FRONTEND=noninteractive apt-get install -qq apt-fast > /dev/null && sudo echo debconf apt-fast/maxdownloads string 16 | debconf-set-selections && sudo echo debconf apt-fast/dlflag boolean true | debconf-set-selections && sudo echo debconf apt-fast/aptmanager string apt-get | debconf-set-selections 
+sudo apt-get -qq update > /dev/null && sudo DEBIAN_FRONTEND=noninteractive apt-get -y install apt-fast > /dev/null 
 echo $Done
 
 echo "${RED}Installing day2day packages${NORMAL}"
@@ -177,4 +177,4 @@ sudo echo "bash -c zsh" >> .bashrc # This is used since for some cloud service c
 echo $Done
 
 echo "${GREEN}ALL DONE!${NORMAL}"
-echo "${GREEN}It is recommended to ${RED}reboot${NORMAL} your server now!${NORMAL}"
+echo "${GREEN}It is recommended to ${RED}reboot${NORMAL}${GREEN} your server now!${NORMAL}"
