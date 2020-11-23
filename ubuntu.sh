@@ -67,7 +67,6 @@ echo $Done
 
 echo "${RED}Now installing some python essential packages${NORMAL}"
 sudo apt-get install -qq python3-pip python3-dev python3-utmp python3-virtualenv > /dev/null 2>&1
-pip3 install virtualenvwrapper wheel gallery-dl youtube-dl requests bs4 lxml -q > /dev/null 2>&1
 echo $Done
 
 echo "${RED}Installing rclone${NORMAL}"
@@ -144,7 +143,7 @@ echo -e "${GREEN}Making Oh My Zsh hawt...${NORMAL}"
 	
     sed -i '/^ZSH_THEME=/c\ZSH_THEME="random"' $HOME/.zshrc
 	sed -i '/^plugins=*=/c\plugins=(command-not-found tmux tmuxinator jump z zsh-syntax-highlighting zsh-autosuggestions zsh-completions)' $HOME/.zshrc
-	
+	echo "export PATH=\"/home/$USER/.local/bin:\$PATH\"" >> ~/.zshrc && source ~/.zshrc
 	sudo tee -a $HOME/.zshrc >> /dev/null <<'ALIAS'
 ##############
 #  A L I A S #
