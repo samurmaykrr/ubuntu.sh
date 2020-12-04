@@ -132,12 +132,12 @@ echo $Done
 echo "${RED}Now installing ZSH${NORMAL}"
 sleep 1
 sudo apt-get update -qq && sudo apt-get install -qq zsh > /dev/null 2>&1 && \
-git clone --quiet https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh > /dev/null  && cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc 
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 echo -e "${GREEN}Making Oh My Zsh hawt...${NORMAL}"
     git clone --quiet https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting > /dev/null 
     git clone --quiet https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions > /dev/null 
     git clone --quiet https://github.com/zsh-users/zsh-completions $HOME/.oh-my-zsh/custom/plugins/zsh-completions > /dev/null 
-	wget https://raw.githubusercontent.com/rupa/z/master/z.sh -q -O ~/.z > /dev/null 2>&1
+    wget https://raw.githubusercontent.com/rupa/z/master/z.sh -q -O ~/.z > /dev/null 2>&1
     git clone --quiet --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/custom/themes/powerlevel10k > /dev/null
     [[ -z $(grep "autoload -U compinit && compinit" $HOME/.zshrc) ]] && echo "autoload -U compinit && compinit" >> $HOME/.zshrc
 	
