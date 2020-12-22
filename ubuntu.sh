@@ -134,17 +134,17 @@ sleep 1
 sudo apt-get update -qq && sudo apt-get install -qq zsh > /dev/null 2>&1 && \
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 echo -e "${GREEN}Making Oh My Zsh hawt...${NORMAL}"
-    git clone --quiet https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting > /dev/null 
-    git clone --quiet https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions > /dev/null 
-    git clone --quiet https://github.com/zsh-users/zsh-completions $HOME/.oh-my-zsh/custom/plugins/zsh-completions > /dev/null 
-    wget https://raw.githubusercontent.com/rupa/z/master/z.sh -q -O ~/.z > /dev/null 2>&1
-    git clone --quiet --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/custom/themes/powerlevel10k > /dev/null
-    [[ -z $(grep "autoload -U compinit && compinit" $HOME/.zshrc) ]] && echo "autoload -U compinit && compinit" >> $HOME/.zshrc
+git clone --quiet https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting > /dev/null 
+git clone --quiet https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions > /dev/null 
+git clone --quiet https://github.com/zsh-users/zsh-completions $HOME/.oh-my-zsh/custom/plugins/zsh-completions > /dev/null 
+wget https://raw.githubusercontent.com/rupa/z/master/z.sh -q -O ~/.z > /dev/null 2>&1
+git clone --quiet --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/custom/themes/powerlevel10k > /dev/null
+[[ -z $(grep "autoload -U compinit && compinit" $HOME/.zshrc) ]] && echo "autoload -U compinit && compinit" >> $HOME/.zshrc
 	
-    sed -i '/^ZSH_THEME=/c\ZSH_THEME="random"' $HOME/.zshrc
-	sed -i '/^plugins=*=/c\plugins=(command-not-found tmux tmuxinator jump z zsh-syntax-highlighting zsh-autosuggestions zsh-completions)' $HOME/.zshrc
-	echo "export PATH=\"/home/$USER/.local/bin:\$PATH\"" >> ~/.zshrc && source ~/.zshrc
-	sudo tee -a $HOME/.zshrc >> /dev/null <<'ALIAS'
+sed -i '/^ZSH_THEME=/c\ZSH_THEME="random"' $HOME/.zshrc
+sed -i '/^plugins=*=/c\plugins=(command-not-found tmux tmuxinator jump z zsh-syntax-highlighting zsh-autosuggestions zsh-completions)' $HOME/.zshrc
+echo "export PATH=\"/home/$USER/.local/bin:\$PATH\"" >> ~/.zshrc && source ~/.zshrc
+sudo tee -a $HOME/.zshrc >> /dev/null <<'ALIAS'
 ##############
 #  A L I A S #
 ##############
@@ -171,7 +171,7 @@ alias refresh="source ~/.zshrc"
 ALIAS
 
 
-sudo chsh -s /bin/zsh $USER
+#sudo chsh -s /bin/zsh $USER
 sudo echo "bash -c zsh" >> .bashrc # This is used since for some cloud service changing the shell isn't permitted so a work around for it.
 echo $Done
 
