@@ -143,7 +143,7 @@ git clone --quiet --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.
 	
 sed -i '/^ZSH_THEME=/c\ZSH_THEME="random"' $HOME/.zshrc
 sed -i '/^plugins=*=/c\plugins=(command-not-found tmux tmuxinator jump z zsh-syntax-highlighting zsh-autosuggestions zsh-completions)' $HOME/.zshrc
-echo "export PATH=\"/home/$USER/.local/bin:\$PATH\"" >> ~/.zshrc && source ~/.zshrc
+echo "export PATH=\"/home/$USER/.local/bin:\$PATH\"" >> ~/.zshrc 
 sudo tee -a $HOME/.zshrc >> /dev/null <<'ALIAS'
 ##############
 #  A L I A S #
