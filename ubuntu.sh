@@ -74,6 +74,12 @@ sleep 1
 curl -s https://rclone.org/install.sh | sudo bash > /dev/null 2>&1
 echo $Done
 
+echo "${RED}Installing a good vimrc${NORMAL}"
+
+git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime > /dev/null 
+sh ~/.vim_runtime/install_awesome_vimrc.sh > /dev/null 
+echo $Done
+
 echo "${RED}Installing vsftpd${NORMAL}"
 sudo apt-get install -qq vsftpd  > /dev/null
 sudo systemctl start vsftpd  > /dev/null 2>&1
