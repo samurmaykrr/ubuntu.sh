@@ -62,7 +62,7 @@ sudo apt-get -qq update > /dev/null && sudo DEBIAN_FRONTEND=noninteractive apt-g
 echo $Done
 
 echo "${RED}Installing day2day packages${NORMAL}"
-sudo apt-get install -qq ncdu tmux irssi tree rar unrar zip unzip htop atop p7zip-full neovim vnstati > /dev/null 2>&1
+sudo apt-get install -qq ncdu tmux irssi tree rar unrar zip unzip htop atop p7zip-full neovim vnstati bat > /dev/null 2>&1
 echo $Done
 
 echo "${RED}Now installing some python essential packages${NORMAL}"
