@@ -12,7 +12,7 @@ GREEN=`tput setaf 2`
 Done="${GREEN}Done ✓${NORMAL}"
 
 clear
-echo "${RED}Disclaimer:${NORMAL} This script is shit and bloated"
+echo "${RED}Disclaimer:${NORMAL} This script is bloated"
 sleep 5
 
 echo "${RED}Do you want to change server password?${NORMAL}"
@@ -63,6 +63,9 @@ echo $Done
 
 echo "${RED}Installing day2day packages${NORMAL}"
 sudo apt-get install -qq ncdu tmux irssi tree rar unrar zip unzip htop atop p7zip-full neovim vnstati bat > /dev/null 2>&1
+mkdir -p ~/.local/bin
+ln -s /usr/bin/batcat ~/.local/bin/bat > /dev/null 2>&1
+
 echo $Done
 
 echo "${RED}Now installing some python essential packages${NORMAL}"
@@ -76,8 +79,8 @@ echo $Done
 
 echo "${RED}Installing a good vimrc${NORMAL}"
 
-git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime > /dev/null 
-sh ~/.vim_runtime/install_awesome_vimrc.sh > /dev/null 
+git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime > /dev/null 2>&1
+sh ~/.vim_runtime/install_awesome_vimrc.sh > /dev/null 2>&1
 echo $Done
 
 echo "${RED}Installing vsftpd${NORMAL}"
@@ -171,7 +174,7 @@ alias rm="sudo rm -rf"
 alias mkd="mkdir"
 alias ytdl="youtube-dl"
 alias gdl="gallery-dl"
-alias git-push-all="git add * -f && git commit -m "pushed""
+alias git-push-all="git add * -f && git commit -m \"pushed\""
 alias aria2="aria2c"
 alias refresh="source ~/.zshrc"
 ALIAS
