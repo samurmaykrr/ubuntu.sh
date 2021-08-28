@@ -107,11 +107,13 @@ echo $Done
 echo "${RED}Installing Language packages${NORMAL}"
 sudo add-apt-repository -y ppa:openjdk-r/ppa > /dev/null
 sudo add-apt-repository -y ppa:linuxuprising/libpng12 > /dev/null # I am skipping php due to reasons and only adding its repo in case there is a need to install it.
-sudo apt-get install -qq nginx golang perl openjdk-15-jre > /dev/null 2>&1 && curl -sL https://deb.nodesource.com/ssetup_current.x | sudo -E bash - > /dev/null && sudo apt-get -y install nodejs > /dev/null  && curl -fsSL https://get.docker.com -o get-docker.sh > /dev/null && sh get-docker.sh > /dev/null
+sudo apt-get install -qq nginx golang perl openjdk-15-jre > /dev/null 2>&1 
+curl -sL https://deb.nodesource.com/ssetup_current.x | sudo -E bash - > /dev/null && sudo apt-get -y install nodejs > /dev/null
+curl -fsSL https://get.docker.com -o get-docker.sh > /dev/null && sh get-docker.sh > /dev/null
 echo $Done # sudo apt-get install -qq curl debconf-utils php-pear php7.4-curl php7.4-dev php7.4-gd php7.4-mbstring php7.4-zip php7.4-mysql php7.4-xml php7.4-fpm php7.4-intl php7.4-bcmath > /dev/null 
  
 #echo "${RED}Installing aria2 & transmission${NORMAL}"
-#sudo apt-get install -qq aria2 > /dev/null
+sudo apt-get install -qq aria2 > /dev/null
 #sudo apt-get install -qq transmission-cli transmission-daemon > /dev/null && sudo /etc/init.d/transmission-daemon stop > /dev/null && mkdir ~/downloads && sudo chown ubuntu:debian-transmission ~/downloads && sudo chmod g+w ~/downloads && clear && sudo sed -i 's|"/var/lib/transmission-daemon/downloads"|"~/downloads"|g' /etc/transmission-daemon/settings.json && sudo sed -i 's|"rpc-whitelist-enabled": true|"rpc-whitelist-enabled": false|g' /etc/transmission-daemon/settings.json && sudo sed -i 's|"rpc-authentication-required": true|"rpc-authentication-required": false|g' /etc/transmission-daemon/settings.json > /dev/null
 #echo $Done
 # not installing but kept in the code for future purposes
