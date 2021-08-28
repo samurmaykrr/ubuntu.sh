@@ -69,7 +69,8 @@ ln -s /usr/bin/batcat ~/.local/bin/bat > /dev/null 2>&1
 echo $Done
 
 echo "${RED}Now installing some python essential packages${NORMAL}"
-sudo apt-get install -qq python3-pip python3-dev python3-utmp python3-virtualenv bs4 youtube-dl gallery-dl python-dateutil requests setuptools botocore oauthlib  docutils requests-oauthlib tqdm pytest wheel urllib3 > /dev/null 2>&1
+sudo apt-get install -qq python3-pip python3-dev python3-utmp python3-virtualenv  > /dev/null 2>&1
+pip install bs4 youtube-dl gallery-dl python-dateutil requests setuptools botocore oauthlib  docutils requests-oauthlib tqdm pytest wheel urllib3 > /dev/null 2>&1
 echo $Done
 
 echo "${RED}Installing rclone${NORMAL}"
