@@ -88,6 +88,7 @@ echo "${RED}Installing vsftpd${NORMAL}"
 sudo apt-get install -qq vsftpd  > /dev/null
 sudo systemctl start vsftpd  > /dev/null 2>&1
 sudo systemctl enable vsftpd > /dev/null 2>&1
+sudo sed -i 's|"write_enable=NO"|"write_enable=YES"|g' /etc/vsftpd.conf
 sudo tee -a /etc/vsftpduserlist.conf >> /dev/null <<'user'
 ubuntu
 root
