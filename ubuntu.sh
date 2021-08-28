@@ -108,7 +108,7 @@ echo "${RED}Installing Language packages${NORMAL}"
 sudo add-apt-repository -y ppa:openjdk-r/ppa > /dev/null
 sudo add-apt-repository -y ppa:linuxuprising/libpng12 > /dev/null # I am skipping php due to reasons and only adding its repo in case there is a need to install it.
 sudo apt-get install -qq nginx golang perl openjdk-15-jre > /dev/null 2>&1 
-curl -sL https://deb.nodesource.com/ssetup_current.x | sudo -E bash - > /dev/null && sudo apt-get -y install nodejs > /dev/null
+curl -sL https://deb.nodesource.com/setup_current.x | sudo -E bash - > /dev/null && sudo apt-get -y install nodejs > /dev/null
 echo $Done # sudo apt-get install -qq curl debconf-utils php-pear php7.4-curl php7.4-dev php7.4-gd php7.4-mbstring php7.4-zip php7.4-mysql php7.4-xml php7.4-fpm php7.4-intl php7.4-bcmath > /dev/null 
  
 #echo "${RED}Installing aria2 & transmission${NORMAL}"
